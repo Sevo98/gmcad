@@ -38,6 +38,9 @@ namespace GMCAD
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.trackBarScale = new System.Windows.Forms.TrackBar();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonLeft = new System.Windows.Forms.Button();
+            this.buttonRight = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
@@ -102,7 +105,7 @@ namespace GMCAD
             // 
             // trackBarScale
             // 
-            this.trackBarScale.Location = new System.Drawing.Point(492, 27);
+            this.trackBarScale.Location = new System.Drawing.Point(491, 27);
             this.trackBarScale.Maximum = 100;
             this.trackBarScale.Minimum = 1;
             this.trackBarScale.Name = "trackBarScale";
@@ -120,13 +123,45 @@ namespace GMCAD
             this.panel1.Controls.Add(this.pictureBox);
             this.panel1.Location = new System.Drawing.Point(12, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1347, 615);
+            this.panel1.Size = new System.Drawing.Size(1347, 636);
             this.panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Rotate the image 90 degrees";
+            // 
+            // buttonLeft
+            // 
+            this.buttonLeft.Location = new System.Drawing.Point(12, 43);
+            this.buttonLeft.Name = "buttonLeft";
+            this.buttonLeft.Size = new System.Drawing.Size(33, 23);
+            this.buttonLeft.TabIndex = 7;
+            this.buttonLeft.Text = "Left";
+            this.buttonLeft.UseVisualStyleBackColor = true;
+            this.buttonLeft.Click += new System.EventHandler(this.buttonLeft_Click);
+            // 
+            // buttonRight
+            // 
+            this.buttonRight.Location = new System.Drawing.Point(115, 43);
+            this.buttonRight.Name = "buttonRight";
+            this.buttonRight.Size = new System.Drawing.Size(41, 23);
+            this.buttonRight.TabIndex = 8;
+            this.buttonRight.Text = "Right";
+            this.buttonRight.UseVisualStyleBackColor = true;
+            this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1371, 719);
+            this.ClientSize = new System.Drawing.Size(1371, 768);
+            this.Controls.Add(this.buttonRight);
+            this.Controls.Add(this.buttonLeft);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBarScale);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip);
@@ -154,6 +189,9 @@ namespace GMCAD
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.TrackBar trackBarScale;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonLeft;
+        private System.Windows.Forms.Button buttonRight;
     }
 }
 

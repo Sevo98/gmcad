@@ -81,7 +81,7 @@ namespace GMCAD
             if (image == null)
             {
                 MessageBox.Show("Select image!");
-                trackBarScale.Value = 1;
+                trackBarScale.Value = 50;
                 return;
             }
 
@@ -89,6 +89,37 @@ namespace GMCAD
             width = (image.Width * trackBarScale.Value) / 100;
             pictureBox.Image = ResizeNow(width, height);
         }
-        
+
+        private void CorrectSizeImage(Image tempImage)
+        {
+            height = (tempImage.Height * trackBarScale.Value) / 100;
+            width = (tempImage.Width * trackBarScale.Value) / 100;
+            pictureBox.Image = ResizeNow(width, height);
+        }
+
+        private void buttonLeft_Click(object sender, EventArgs e)
+        {
+            if (image == null)
+            {
+                MessageBox.Show("Select image!");
+                return;
+            }
+
+            Image tempImage = image;
+            tempImage.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            CorrectSizeImage(tempImage);
+        }
+
+        private void buttonRight_Click(object sender, EventArgs e)
+        {
+            if (image == null)
+            {
+                MessageBox.Show("Select image!");
+                return;
+            }
+            Image tempImage = image;
+            tempImage.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            CorrectSizeImage(tempImage);
+        }
     }
 }
