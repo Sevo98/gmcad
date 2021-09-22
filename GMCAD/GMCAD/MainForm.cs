@@ -23,6 +23,7 @@ namespace GMCAD
         private Image image;
         private int width;
         private int height;
+        string fileName;
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -34,7 +35,12 @@ namespace GMCAD
 
             try
             {
+                if (image != null)
+                {
+                    image = null;
+                }
                 image = new Bitmap(openDialog.FileName);
+                fileName = openDialog.FileName;
                 width = image.Width;
                 height = image.Height;
                 trackBarScale.Value = 50;
@@ -144,6 +150,33 @@ namespace GMCAD
             Image tempImage = image;
             tempImage.RotateFlip(RotateFlipType.RotateNoneFlipY);
             CorrectSizeImage(tempImage);
+        }
+
+        private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to save the file?", "Save", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (image == null || fileName == null)
+                {
+                    MessageBox.Show("Select image!");
+                    return;
+                }
+
+                Image saveImage = (Image)pictureBox.Image.Clone();
+                saveImage.Save(fileName);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            
+        }
+
+        private void saveUsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

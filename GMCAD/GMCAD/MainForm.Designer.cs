@@ -82,20 +82,22 @@ namespace GMCAD
             this.saveToolStripMenuItem1,
             this.saveUsToolStripMenuItem});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem1.Text = "Save";
+            this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
             // saveUsToolStripMenuItem
             // 
             this.saveUsToolStripMenuItem.Name = "saveUsToolStripMenuItem";
-            this.saveUsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.saveUsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveUsToolStripMenuItem.Text = "Save us...";
+            this.saveUsToolStripMenuItem.Click += new System.EventHandler(this.saveUsToolStripMenuItem_Click);
             // 
             // pictureBox
             // 
