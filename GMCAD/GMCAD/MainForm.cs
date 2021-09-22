@@ -59,7 +59,7 @@ namespace GMCAD
             
         }
 
-
+        //https://youtu.be/eiakPE9R7aw
         private Bitmap ResizeNow(int target_width, int target_height)
         {
             Rectangle dest_rect = new Rectangle(0, 0, target_width, target_height);
@@ -83,11 +83,11 @@ namespace GMCAD
             return destImage;
         }
 
-        private void trackBar_Scroll(object sender, EventArgs e)
+        private void trackBarScale_Scroll(object sender, EventArgs e)
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!");
+                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 trackBarScale.Value = 50;
                 return;
             }
@@ -108,7 +108,7 @@ namespace GMCAD
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!");
+                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -121,7 +121,7 @@ namespace GMCAD
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!");
+                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             Image tempImage = image;
@@ -133,7 +133,7 @@ namespace GMCAD
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!");
+                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             Image tempImage = image;
@@ -145,7 +145,7 @@ namespace GMCAD
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!");
+                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             Image tempImage = image;
@@ -160,7 +160,7 @@ namespace GMCAD
             {
                 if (image == null || fileName == null)
                 {
-                    MessageBox.Show("Select image!");
+                    MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -175,11 +175,12 @@ namespace GMCAD
             
         }
 
+        //https://www.youtube.com/watch?v=qGAns8bn7GQ
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (image == null || fileName == null)
             {
-                MessageBox.Show("Select image!");
+                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -198,7 +199,7 @@ namespace GMCAD
                 }
                 catch (OutOfMemoryException)
                 {
-                    MessageBox.Show("Unable to save image!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Unable to save image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw;
                 }
             }

@@ -122,7 +122,7 @@ namespace GMCAD
             this.trackBarScale.Size = new System.Drawing.Size(400, 45);
             this.trackBarScale.TabIndex = 5;
             this.trackBarScale.Value = 50;
-            this.trackBarScale.Scroll += new System.EventHandler(this.trackBar_Scroll);
+            this.trackBarScale.Scroll += new System.EventHandler(this.trackBarScale_Scroll);
             // 
             // panel1
             // 
