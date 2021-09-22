@@ -40,6 +40,8 @@ namespace GMCAD
                 {
                     image = null;
                 }
+                image = Image.FromFile(openDialog.FileName);
+                image = null;
                 image = new Bitmap(openDialog.FileName);
                 fileName = openDialog.FileName;
                 width = image.Width;
@@ -53,7 +55,7 @@ namespace GMCAD
             }
             catch (OutOfMemoryException)
             {
-                MessageBox.Show("Unsupported format!");
+                MessageBox.Show("Unsupported format!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             
