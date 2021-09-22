@@ -72,7 +72,7 @@ namespace GMCAD
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.openToolStripMenuItem.Text = "Open image";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -82,34 +82,39 @@ namespace GMCAD
             this.saveToolStripMenuItem1,
             this.saveUsToolStripMenuItem});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.saveToolStripMenuItem1.Text = "Save";
             this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
             // saveUsToolStripMenuItem
             // 
             this.saveUsToolStripMenuItem.Name = "saveUsToolStripMenuItem";
-            this.saveUsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveUsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.saveUsToolStripMenuItem.Text = "Save as...";
             this.saveUsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(132, 3);
+            this.pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox.Location = new System.Drawing.Point(122, 34);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1098, 609);
+            this.pictureBox.Size = new System.Drawing.Size(1096, 557);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
             // trackBarScale
             // 
+            this.trackBarScale.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBarScale.Location = new System.Drawing.Point(491, 27);
             this.trackBarScale.Maximum = 100;
             this.trackBarScale.Minimum = 1;
@@ -125,10 +130,11 @@ namespace GMCAD
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pictureBox);
             this.panel1.Location = new System.Drawing.Point(12, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1347, 636);
+            this.panel1.Size = new System.Drawing.Size(1347, 689);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -162,6 +168,7 @@ namespace GMCAD
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(1257, 27);
             this.label2.Name = "label2";
@@ -171,6 +178,7 @@ namespace GMCAD
             // 
             // buttonVertical
             // 
+            this.buttonVertical.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonVertical.Location = new System.Drawing.Point(1203, 43);
             this.buttonVertical.Name = "buttonVertical";
             this.buttonVertical.Size = new System.Drawing.Size(75, 23);
@@ -181,6 +189,7 @@ namespace GMCAD
             // 
             // buttonHorizontal
             // 
+            this.buttonHorizontal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonHorizontal.Location = new System.Drawing.Point(1284, 43);
             this.buttonHorizontal.Name = "buttonHorizontal";
             this.buttonHorizontal.Size = new System.Drawing.Size(75, 23);
@@ -204,6 +213,7 @@ namespace GMCAD
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Raster image viewer";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
