@@ -87,7 +87,7 @@ namespace GMCAD
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 trackBarScale.Value = 50;
                 return;
             }
@@ -108,7 +108,7 @@ namespace GMCAD
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -121,7 +121,7 @@ namespace GMCAD
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             Image tempImage = image;
@@ -133,7 +133,7 @@ namespace GMCAD
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             Image tempImage = image;
@@ -145,7 +145,7 @@ namespace GMCAD
         {
             if (image == null)
             {
-                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             Image tempImage = image;
@@ -160,7 +160,7 @@ namespace GMCAD
             {
                 if (image == null || fileName == null)
                 {
-                    MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -180,7 +180,7 @@ namespace GMCAD
         {
             if (image == null || fileName == null)
             {
-                MessageBox.Show("Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
