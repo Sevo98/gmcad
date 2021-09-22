@@ -183,22 +183,23 @@ namespace GMCAD
                 return;
             }
 
-            SaveFileDialog savedialog = new SaveFileDialog();
-            savedialog.Title = "Save image as...";
-            savedialog.OverwritePrompt = true;
-            savedialog.CheckPathExists = true;
-            savedialog.Filter = "Images|*.bmp;*.png;*.jpg";
-            savedialog.ShowHelp = true;
 
-            if (savedialog.ShowDialog() == DialogResult.OK)
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Title = "Save image as...";
+            saveFile.OverwritePrompt = true;
+            saveFile.CheckPathExists = true;
+            saveFile.Filter = "Image Files(*.BMP)|*.BMP|Image Files(*.PNG)|*.PNG|Image Files(*.JPG)|*.JPG|All files(*.*)|*.*";
+            saveFile.ShowHelp = true;
+            if (saveFile.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    pictureBox.Image.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    pictureBox.Image.Save(saveFile.FileName);
                 }
-                catch
+                catch (OutOfMemoryException)
                 {
-                    MessageBox.Show("Unable to save image!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Unable to save image!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
                 }
             }
         }
