@@ -41,6 +41,9 @@ namespace GMCAD
             this.label1 = new System.Windows.Forms.Label();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonVertical = new System.Windows.Forms.Button();
+            this.buttonHorizontal = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
@@ -155,10 +158,42 @@ namespace GMCAD
             this.buttonRight.UseVisualStyleBackColor = true;
             this.buttonRight.Click += new System.EventHandler(this.buttonRight_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1257, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Reflection";
+            // 
+            // buttonVertical
+            // 
+            this.buttonVertical.Location = new System.Drawing.Point(1203, 43);
+            this.buttonVertical.Name = "buttonVertical";
+            this.buttonVertical.Size = new System.Drawing.Size(75, 23);
+            this.buttonVertical.TabIndex = 10;
+            this.buttonVertical.Text = "Vertical";
+            this.buttonVertical.UseVisualStyleBackColor = true;
+            this.buttonVertical.Click += new System.EventHandler(this.buttonVertical_Click);
+            // 
+            // buttonHorizontal
+            // 
+            this.buttonHorizontal.Location = new System.Drawing.Point(1284, 43);
+            this.buttonHorizontal.Name = "buttonHorizontal";
+            this.buttonHorizontal.Size = new System.Drawing.Size(75, 23);
+            this.buttonHorizontal.TabIndex = 11;
+            this.buttonHorizontal.Text = "Horizontal";
+            this.buttonHorizontal.UseVisualStyleBackColor = true;
+            this.buttonHorizontal.Click += new System.EventHandler(this.buttonHorizontal_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1371, 768);
+            this.Controls.Add(this.buttonHorizontal);
+            this.Controls.Add(this.buttonVertical);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.label1);
@@ -192,6 +227,9 @@ namespace GMCAD
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonRight;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonVertical;
+        private System.Windows.Forms.Button buttonHorizontal;
     }
 }
 

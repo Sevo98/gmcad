@@ -121,5 +121,29 @@ namespace GMCAD
             tempImage.RotateFlip(RotateFlipType.Rotate90FlipNone);
             CorrectSizeImage(tempImage);
         }
+
+        private void buttonVertical_Click(object sender, EventArgs e)
+        {
+            if (image == null)
+            {
+                MessageBox.Show("Select image!");
+                return;
+            }
+            Image tempImage = image;
+            tempImage.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            CorrectSizeImage(tempImage);
+        }
+
+        private void buttonHorizontal_Click(object sender, EventArgs e)
+        {
+            if (image == null)
+            {
+                MessageBox.Show("Select image!");
+                return;
+            }
+            Image tempImage = image;
+            tempImage.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            CorrectSizeImage(tempImage);
+        }
     }
 }
