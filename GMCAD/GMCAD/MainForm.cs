@@ -31,6 +31,7 @@ namespace GMCAD
             openDialog.Filter = "Images|*.bmp;*.png;*.jpg|All files|*.*";
             if (openDialog.ShowDialog() != DialogResult.OK)
             {
+                return;
             }
 
             try
@@ -174,9 +175,32 @@ namespace GMCAD
             
         }
 
-        private void saveUsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (image == null || fileName == null)
+            {
+                MessageBox.Show("Select image!");
+                return;
+            }
 
+            SaveFileDialog savedialog = new SaveFileDialog();
+            savedialog.Title = "Save image as...";
+            savedialog.OverwritePrompt = true;
+            savedialog.CheckPathExists = true;
+            savedialog.Filter = "Images|*.bmp;*.png;*.jpg";
+            savedialog.ShowHelp = true;
+
+            if (savedialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pictureBox.Image.Save(savedialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+                }
+                catch
+                {
+                    MessageBox.Show("Unable to save image!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
