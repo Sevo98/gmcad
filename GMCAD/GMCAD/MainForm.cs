@@ -37,7 +37,11 @@ namespace GMCAD
                 image = new Bitmap(openDialog.FileName);
                 width = image.Width;
                 height = image.Height;
+                trackBarScale.Value = 50;
                 pictureBox.Image = image;
+                height = (image.Height * trackBarScale.Value) / 100;
+                width = (image.Width * trackBarScale.Value) / 100;
+                pictureBox.Image = ResizeNow(width, height);
 
             }
             catch (OutOfMemoryException)
@@ -48,35 +52,6 @@ namespace GMCAD
             
         }
 
-        private void trackBarHeight_Scroll(object sender, EventArgs e)
-        {
-            if (image == null)
-            {
-                MessageBox.Show("Select image!");
-                trackBarHeight.Value = 100;
-                return;
-            }
-
-            height = (image.Height * trackBarHeight.Value) / 100;
-            pictureBox.Image = ResizeNow(width, height);
-
-            
-
-        }
-
-        private void trackBarWidth_Scroll(object sender, EventArgs e)
-        {
-            if (image == null)
-            {
-                MessageBox.Show("Select image!");
-                trackBarWidth.Value = 100;
-                return;
-            }
-
-            width = (image.Width * trackBarWidth.Value) / 100;
-            pictureBox.Image = ResizeNow(width, height);
-
-        }
 
         private Bitmap ResizeNow(int target_width, int target_height)
         {
@@ -100,5 +75,20 @@ namespace GMCAD
 
             return destImage;
         }
+
+        private void trackBar_Scroll(object sender, EventArgs e)
+        {
+            if (image == null)
+            {
+                MessageBox.Show("Select image!");
+                trackBarScale.Value = 1;
+                return;
+            }
+
+            height = (image.Height * trackBarScale.Value) / 100;
+            width = (image.Width * trackBarScale.Value) / 100;
+            pictureBox.Image = ResizeNow(width, height);
+        }
+        
     }
 }

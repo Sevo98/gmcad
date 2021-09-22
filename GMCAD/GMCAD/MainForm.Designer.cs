@@ -35,15 +35,13 @@ namespace GMCAD
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.saveUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trackBarHeight = new System.Windows.Forms.TrackBar();
-            this.trackBarWidth = new System.Windows.Forms.TrackBar();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.trackBarScale = new System.Windows.Forms.TrackBar();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarWidth)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -52,7 +50,7 @@ namespace GMCAD
             this.fileToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(855, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1371, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -93,32 +91,25 @@ namespace GMCAD
             this.saveUsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.saveUsToolStripMenuItem.Text = "Save us...";
             // 
-            // trackBarHeight
+            // pictureBox
             // 
-            this.trackBarHeight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarHeight.Location = new System.Drawing.Point(63, 30);
-            this.trackBarHeight.Maximum = 100;
-            this.trackBarHeight.Minimum = 1;
-            this.trackBarHeight.Name = "trackBarHeight";
-            this.trackBarHeight.Size = new System.Drawing.Size(406, 45);
-            this.trackBarHeight.TabIndex = 2;
-            this.trackBarHeight.Value = 100;
-            this.trackBarHeight.Scroll += new System.EventHandler(this.trackBarHeight_Scroll);
+            this.pictureBox.Location = new System.Drawing.Point(132, 3);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(1098, 609);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
-            // trackBarWidth
+            // trackBarScale
             // 
-            this.trackBarWidth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.trackBarWidth.Location = new System.Drawing.Point(12, 78);
-            this.trackBarWidth.Maximum = 100;
-            this.trackBarWidth.Minimum = 1;
-            this.trackBarWidth.Name = "trackBarWidth";
-            this.trackBarWidth.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarWidth.Size = new System.Drawing.Size(45, 406);
-            this.trackBarWidth.TabIndex = 3;
-            this.trackBarWidth.Value = 100;
-            this.trackBarWidth.Scroll += new System.EventHandler(this.trackBarWidth_Scroll);
+            this.trackBarScale.Location = new System.Drawing.Point(492, 27);
+            this.trackBarScale.Maximum = 100;
+            this.trackBarScale.Minimum = 1;
+            this.trackBarScale.Name = "trackBarScale";
+            this.trackBarScale.Size = new System.Drawing.Size(400, 45);
+            this.trackBarScale.TabIndex = 5;
+            this.trackBarScale.Value = 50;
+            this.trackBarScale.Scroll += new System.EventHandler(this.trackBar_Scroll);
             // 
             // panel1
             // 
@@ -127,37 +118,26 @@ namespace GMCAD
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.pictureBox);
-            this.panel1.Location = new System.Drawing.Point(63, 78);
+            this.panel1.Location = new System.Drawing.Point(12, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(406, 406);
+            this.panel1.Size = new System.Drawing.Size(1347, 615);
             this.panel1.TabIndex = 4;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(400, 400);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(855, 510);
+            this.ClientSize = new System.Drawing.Size(1371, 719);
+            this.Controls.Add(this.trackBarScale);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.trackBarWidth);
-            this.Controls.Add(this.trackBarHeight);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
             this.Text = "Raster image viewer";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarWidth)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,10 +151,9 @@ namespace GMCAD
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem saveUsToolStripMenuItem;
-        private System.Windows.Forms.TrackBar trackBarHeight;
-        private System.Windows.Forms.TrackBar trackBarWidth;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.TrackBar trackBarScale;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
