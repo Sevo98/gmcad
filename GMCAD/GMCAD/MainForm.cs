@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GMvSAPR;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +21,12 @@ namespace GMCAD
         }
 
 
-        private Image image;
+        public static Bitmap image;
+       // public static Bitmap ImageBitmap;
         private int width;
         private int height;
         string fileName;
+        public static uint[,] pixel;
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -40,7 +43,7 @@ namespace GMCAD
                 {
                     image = null;
                 }
-                image = Image.FromFile(openDialog.FileName);
+                image = (Bitmap)Image.FromFile(openDialog.FileName);
                 image = null;
                 image = new Bitmap(openDialog.FileName);
                 fileName = openDialog.FileName;
@@ -50,6 +53,10 @@ namespace GMCAD
                 pictureBox.Image = image;
                 height = (image.Height * trackBarScale.Value) / 100;
                 width = (image.Width * trackBarScale.Value) / 100;
+                pixel = new uint[image.Height, image.Width];
+                for (var y = 0; y < image.Height; y++)
+                for (var x = 0; x < image.Width; x++)
+                    pixel[y, x] = (uint)(image.GetPixel(x, y).ToArgb());
                 pictureBox.Image = ResizeNow(width, height);
 
             }
@@ -205,6 +212,24 @@ namespace GMCAD
                     throw;
                 }
             }
+        }
+
+        private void trackBarContrast_Scroll(object sender, EventArgs e)
+        {
+            if (image == null)
+            {
+                MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                trackBarContrast.Value = 0;
+                return;
+            }
+            uint p;
+            for (var i = 0; i < image.Height; i++)
+            for (var j = 0; j < image.Width; j++)
+            {
+                p = Contrast.ImageContrast(pixel[i, j], trackBarContrast.Value, trackBarContrast.Maximum);
+                image.SetPixel(j, i, Color.FromArgb((int)p));
+            }
+            pictureBox.Image = image;
         }
     }
 }
