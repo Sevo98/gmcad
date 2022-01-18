@@ -321,11 +321,11 @@ namespace GMCAD
             if (image == null)
             {
                 MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                trackBarBringness.Value = 0;
+                trackBarBrightnes.Value = 0;
                 return;
             }
 
-            int brightness = trackBarBringness.Value;
+            int brightness = trackBarBrightnes.Value;
 
             pictureBox.Image = SetBrightness(image, brightness);
         }
@@ -335,7 +335,7 @@ namespace GMCAD
             if (image == null)
             {
                 MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                trackBarBringness.Value = 0;
+                trackBarBrightnes.Value = 0;
                 return;
             }
 

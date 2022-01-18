@@ -48,14 +48,15 @@ namespace GMCAD
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonContour = new System.Windows.Forms.Button();
-            this.trackBarBringness = new System.Windows.Forms.TrackBar();
+            this.trackBarBrightnes = new System.Windows.Forms.TrackBar();
             this.Emboss = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarContrast)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarBringness)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarBrightnes)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -114,7 +115,7 @@ namespace GMCAD
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox.Location = new System.Drawing.Point(122, 34);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1096, 506);
+            this.pictureBox.Size = new System.Drawing.Size(1096, 514);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
@@ -123,7 +124,7 @@ namespace GMCAD
             // 
             this.trackBarScale.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarScale.Location = new System.Drawing.Point(280, 21);
+            this.trackBarScale.Location = new System.Drawing.Point(280, 27);
             this.trackBarScale.Maximum = 100;
             this.trackBarScale.Minimum = 1;
             this.trackBarScale.Name = "trackBarScale";
@@ -140,15 +141,15 @@ namespace GMCAD
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pictureBox);
-            this.panel1.Location = new System.Drawing.Point(12, 129);
+            this.panel1.Location = new System.Drawing.Point(12, 192);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1347, 638);
+            this.panel1.Size = new System.Drawing.Size(1347, 575);
             this.panel1.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(872, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 13);
             this.label1.TabIndex = 6;
@@ -156,7 +157,7 @@ namespace GMCAD
             // 
             // buttonLeft
             // 
-            this.buttonLeft.Location = new System.Drawing.Point(12, 43);
+            this.buttonLeft.Location = new System.Drawing.Point(860, 62);
             this.buttonLeft.Name = "buttonLeft";
             this.buttonLeft.Size = new System.Drawing.Size(33, 23);
             this.buttonLeft.TabIndex = 7;
@@ -166,7 +167,7 @@ namespace GMCAD
             // 
             // buttonRight
             // 
-            this.buttonRight.Location = new System.Drawing.Point(115, 43);
+            this.buttonRight.Location = new System.Drawing.Point(975, 62);
             this.buttonRight.Name = "buttonRight";
             this.buttonRight.Size = new System.Drawing.Size(41, 23);
             this.buttonRight.TabIndex = 8;
@@ -178,7 +179,7 @@ namespace GMCAD
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1257, 27);
+            this.label2.Location = new System.Drawing.Point(914, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 9;
@@ -187,7 +188,7 @@ namespace GMCAD
             // buttonVertical
             // 
             this.buttonVertical.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonVertical.Location = new System.Drawing.Point(1203, 43);
+            this.buttonVertical.Location = new System.Drawing.Point(860, 126);
             this.buttonVertical.Name = "buttonVertical";
             this.buttonVertical.Size = new System.Drawing.Size(75, 23);
             this.buttonVertical.TabIndex = 10;
@@ -198,7 +199,7 @@ namespace GMCAD
             // buttonHorizontal
             // 
             this.buttonHorizontal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonHorizontal.Location = new System.Drawing.Point(1284, 43);
+            this.buttonHorizontal.Location = new System.Drawing.Point(941, 126);
             this.buttonHorizontal.Name = "buttonHorizontal";
             this.buttonHorizontal.Size = new System.Drawing.Size(75, 23);
             this.buttonHorizontal.TabIndex = 11;
@@ -210,7 +211,7 @@ namespace GMCAD
             // 
             this.trackBarContrast.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarContrast.Location = new System.Drawing.Point(797, 24);
+            this.trackBarContrast.Location = new System.Drawing.Point(280, 129);
             this.trackBarContrast.Maximum = 15;
             this.trackBarContrast.Minimum = -15;
             this.trackBarContrast.Name = "trackBarContrast";
@@ -221,7 +222,7 @@ namespace GMCAD
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(213, 27);
+            this.label3.Location = new System.Drawing.Point(244, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 12;
@@ -230,7 +231,7 @@ namespace GMCAD
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(742, 27);
+            this.label4.Location = new System.Drawing.Point(225, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 13;
@@ -238,7 +239,7 @@ namespace GMCAD
             // 
             // buttonContour
             // 
-            this.buttonContour.Location = new System.Drawing.Point(326, 87);
+            this.buttonContour.Location = new System.Drawing.Point(733, 126);
             this.buttonContour.Name = "buttonContour";
             this.buttonContour.Size = new System.Drawing.Size(75, 23);
             this.buttonContour.TabIndex = 14;
@@ -246,21 +247,21 @@ namespace GMCAD
             this.buttonContour.UseVisualStyleBackColor = true;
             this.buttonContour.Click += new System.EventHandler(this.buttonContour_Click);
             // 
-            // trackBarBringness
+            // trackBarBrightnes
             // 
-            this.trackBarBringness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.trackBarBrightnes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarBringness.Location = new System.Drawing.Point(475, 75);
-            this.trackBarBringness.Maximum = 255;
-            this.trackBarBringness.Minimum = -255;
-            this.trackBarBringness.Name = "trackBarBringness";
-            this.trackBarBringness.Size = new System.Drawing.Size(439, 45);
-            this.trackBarBringness.TabIndex = 16;
-            this.trackBarBringness.Scroll += new System.EventHandler(this.trackBarBrightness_Scroll);
+            this.trackBarBrightnes.Location = new System.Drawing.Point(280, 78);
+            this.trackBarBrightnes.Maximum = 255;
+            this.trackBarBrightnes.Minimum = -255;
+            this.trackBarBrightnes.Name = "trackBarBrightnes";
+            this.trackBarBrightnes.Size = new System.Drawing.Size(400, 45);
+            this.trackBarBrightnes.TabIndex = 16;
+            this.trackBarBrightnes.Scroll += new System.EventHandler(this.trackBarBrightness_Scroll);
             // 
             // Emboss
             // 
-            this.Emboss.Location = new System.Drawing.Point(935, 87);
+            this.Emboss.Location = new System.Drawing.Point(733, 62);
             this.Emboss.Name = "Emboss";
             this.Emboss.Size = new System.Drawing.Size(75, 23);
             this.Emboss.TabIndex = 17;
@@ -268,12 +269,22 @@ namespace GMCAD
             this.Emboss.UseVisualStyleBackColor = true;
             this.Emboss.Click += new System.EventHandler(this.Emboss_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(225, 87);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Brightnes:";
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1371, 768);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.Emboss);
-            this.Controls.Add(this.trackBarBringness);
+            this.Controls.Add(this.trackBarBrightnes);
             this.Controls.Add(this.buttonContour);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -297,7 +308,7 @@ namespace GMCAD
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarContrast)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarBringness)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarBrightnes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,8 +335,9 @@ namespace GMCAD
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonContour;
-        private System.Windows.Forms.TrackBar trackBarBringness;
+        private System.Windows.Forms.TrackBar trackBarBrightnes;
         private System.Windows.Forms.Button Emboss;
+        private System.Windows.Forms.Label label5;
     }
 }
 
