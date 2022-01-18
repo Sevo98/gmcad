@@ -287,5 +287,47 @@ namespace GMCAD
             b.UnlockBits(bmData);
             bSrc.UnlockBits(bmSrc);
         }
+
+        public Bitmap SetBrightness(Bitmap bmap, int brightness)
+        {
+            if (brightness < -255) brightness = -255;
+            if (brightness > 255) brightness = 255;
+            Color c;
+            for (int i = 0; i < bmap.Width; i++)
+            {
+                for (int j = 0; j < bmap.Height; j++)
+                {
+                    c = bmap.GetPixel(i, j);
+                    int cR = c.R + brightness;
+                    int cG = c.G + brightness;
+                    int cB = c.B + brightness;
+
+                    if (cR < 0) cR = 1;
+                    if (cR > 255) cR = 255;
+
+                    if (cG < 0) cG = 1;
+                    if (cG > 255) cG = 255;
+
+                    if (cB < 0) cB = 1;
+                    if (cB > 255) cB = 255;
+
+                    bmap.SetPixel(i, j, Color.FromArgb((byte)cR, (byte)cG, (byte)cB));
+                }
+            }
+            return bmap;
+        }
+        private void trackBarBrightness_Scroll(object sender, EventArgs e)
+        {
+            if (image == null)
+            {
+                MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                trackBarBringness.Value = 0;
+                return;
+            }
+
+            int brightness = trackBarBringness.Value;
+
+            pictureBox.Image = SetBrightness(image, brightness);
+        }
     }
 }

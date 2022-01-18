@@ -48,11 +48,13 @@ namespace GMCAD
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonContour = new System.Windows.Forms.Button();
+            this.trackBarBringness = new System.Windows.Forms.TrackBar();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarContrast)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarBringness)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -77,7 +79,7 @@ namespace GMCAD
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.openToolStripMenuItem.Text = "Open image";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -87,7 +89,7 @@ namespace GMCAD
             this.saveToolStripMenuItem1,
             this.saveUsToolStripMenuItem});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveToolStripMenuItem1
@@ -243,10 +245,23 @@ namespace GMCAD
             this.buttonContour.UseVisualStyleBackColor = true;
             this.buttonContour.Click += new System.EventHandler(this.buttonContour_Click);
             // 
+            // trackBarBringness
+            // 
+            this.trackBarBringness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBarBringness.Location = new System.Drawing.Point(576, 78);
+            this.trackBarBringness.Maximum = 255;
+            this.trackBarBringness.Minimum = -255;
+            this.trackBarBringness.Name = "trackBarBringness";
+            this.trackBarBringness.Size = new System.Drawing.Size(439, 45);
+            this.trackBarBringness.TabIndex = 16;
+            this.trackBarBringness.Scroll += new System.EventHandler(this.trackBarBrightness_Scroll);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1371, 768);
+            this.Controls.Add(this.trackBarBringness);
             this.Controls.Add(this.buttonContour);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -270,6 +285,7 @@ namespace GMCAD
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarContrast)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarBringness)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,6 +312,7 @@ namespace GMCAD
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonContour;
+        private System.Windows.Forms.TrackBar trackBarBringness;
     }
 }
 
