@@ -329,5 +329,43 @@ namespace GMCAD
 
             pictureBox.Image = SetBrightness(image, brightness);
         }
+
+        private void Emboss_Click(object sender, EventArgs e)
+        {
+            if (image == null)
+            {
+                MessageBox.Show("Image is not open. Select image!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                trackBarBringness.Value = 0;
+                return;
+            }
+
+            Bitmap embossed = new Bitmap(image); //create a clone
+            for (int i = 0; i < image.Width; i++)
+            {
+                for (int j = 0; j < image.Height; j++)
+                {
+                    Color c = image.GetPixel(i, j);
+                    Color newColor;
+                    if ((i == image.Width - 1))
+                    {
+                        newColor = Color.FromArgb(0, 0, 0);
+                    }
+                    else
+                    {
+                        int x = 0, y = 0;
+                        Color next = image.GetPixel(x + 1, y);
+
+                        newColor = Color.FromArgb(
+                            Math.Abs((byte)((int)c.R - (int)next.R)),
+                            Math.Abs((byte)((int)c.G - (int)next.G)),
+                            Math.Abs((byte)((int)c.B - (int)next.B)));
+
+                    }
+                    embossed.SetPixel(i, j, newColor);
+                }
+            }
+
+            pictureBox.Image = embossed;
+        }
     }
 }

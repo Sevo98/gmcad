@@ -49,6 +49,7 @@ namespace GMCAD
             this.label4 = new System.Windows.Forms.Label();
             this.buttonContour = new System.Windows.Forms.Button();
             this.trackBarBringness = new System.Windows.Forms.TrackBar();
+            this.Emboss = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
@@ -249,7 +250,7 @@ namespace GMCAD
             // 
             this.trackBarBringness.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBarBringness.Location = new System.Drawing.Point(576, 78);
+            this.trackBarBringness.Location = new System.Drawing.Point(475, 75);
             this.trackBarBringness.Maximum = 255;
             this.trackBarBringness.Minimum = -255;
             this.trackBarBringness.Name = "trackBarBringness";
@@ -257,10 +258,21 @@ namespace GMCAD
             this.trackBarBringness.TabIndex = 16;
             this.trackBarBringness.Scroll += new System.EventHandler(this.trackBarBrightness_Scroll);
             // 
+            // Emboss
+            // 
+            this.Emboss.Location = new System.Drawing.Point(935, 87);
+            this.Emboss.Name = "Emboss";
+            this.Emboss.Size = new System.Drawing.Size(75, 23);
+            this.Emboss.TabIndex = 17;
+            this.Emboss.Text = "Emboss";
+            this.Emboss.UseVisualStyleBackColor = true;
+            this.Emboss.Click += new System.EventHandler(this.Emboss_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1371, 768);
+            this.Controls.Add(this.Emboss);
             this.Controls.Add(this.trackBarBringness);
             this.Controls.Add(this.buttonContour);
             this.Controls.Add(this.label4);
@@ -313,6 +325,7 @@ namespace GMCAD
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonContour;
         private System.Windows.Forms.TrackBar trackBarBringness;
+        private System.Windows.Forms.Button Emboss;
     }
 }
 
