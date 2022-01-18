@@ -47,6 +47,7 @@ namespace GMCAD
             this.trackBarContrast = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonContour = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarScale)).BeginInit();
@@ -76,7 +77,7 @@ namespace GMCAD
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "Open image";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -86,7 +87,7 @@ namespace GMCAD
             this.saveToolStripMenuItem1,
             this.saveUsToolStripMenuItem});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveToolStripMenuItem1
@@ -110,7 +111,7 @@ namespace GMCAD
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox.Location = new System.Drawing.Point(122, 34);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1096, 557);
+            this.pictureBox.Size = new System.Drawing.Size(1096, 506);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
@@ -136,9 +137,9 @@ namespace GMCAD
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pictureBox);
-            this.panel1.Location = new System.Drawing.Point(12, 78);
+            this.panel1.Location = new System.Drawing.Point(12, 129);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1347, 689);
+            this.panel1.Size = new System.Drawing.Size(1347, 638);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -232,10 +233,21 @@ namespace GMCAD
             this.label4.TabIndex = 13;
             this.label4.Text = "Contrast:";
             // 
+            // buttonContour
+            // 
+            this.buttonContour.Location = new System.Drawing.Point(326, 87);
+            this.buttonContour.Name = "buttonContour";
+            this.buttonContour.Size = new System.Drawing.Size(75, 23);
+            this.buttonContour.TabIndex = 14;
+            this.buttonContour.Text = "Contour";
+            this.buttonContour.UseVisualStyleBackColor = true;
+            this.buttonContour.Click += new System.EventHandler(this.buttonContour_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1371, 768);
+            this.Controls.Add(this.buttonContour);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.trackBarContrast);
@@ -283,6 +295,7 @@ namespace GMCAD
         private System.Windows.Forms.TrackBar trackBarContrast;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonContour;
     }
 }
 

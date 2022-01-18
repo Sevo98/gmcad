@@ -231,5 +231,61 @@ namespace GMCAD
             }
             pictureBox.Image = image;
         }
+
+        private void buttonContour_Click(object sender, EventArgs e)
+        {
+            Contour(image, 10);
+            pictureBox.Image = image;
+        }
+
+        static unsafe float ToGray(byte* bgr)
+        {
+            return bgr[2] * 0.3f + bgr[1] * 0.59f + bgr[0] * 0.11f;
+        }
+
+        public static void Contour(Bitmap b, float threshold)
+        {
+            var bSrc = (Bitmap)b.Clone();
+
+            var bmData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+            var bmSrc = bSrc.LockBits(new Rectangle(0, 0, bSrc.Width, bSrc.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
+
+            var stride = bmData.Stride;
+
+            unsafe
+            {
+                var p = (byte*)(void*)bmData.Scan0;
+                var pSrc = (byte*)(void*)bmSrc.Scan0;
+
+                var nOffset = stride - b.Width * 3;
+                var nWidth = b.Width - 1;
+                var nHeight = b.Height - 1;
+
+                for (var y = 0; y < nHeight; ++y)
+                {
+                    for (var x = 0; x < nWidth; ++x)
+                    {
+                        //  | p0 |  p1  |
+                        //  |    |  p2  |
+                        var p0 = ToGray(pSrc);
+                        var p1 = ToGray(pSrc + 3);
+                        var p2 = ToGray(pSrc + 3 + stride);
+
+                        if (Math.Abs(p1 - p2) + Math.Abs(p1 - p0) > threshold)
+                            p[0] = p[1] = p[2] = 255;
+                        else
+                            p[0] = p[1] = p[2] = 0;
+
+                        p += 3;
+                        pSrc += 3;
+                    }
+                    p += nOffset;
+                    pSrc += nOffset;
+                }
+            }
+
+            b.UnlockBits(bmData);
+            bSrc.UnlockBits(bmSrc);
+        }
     }
 }
